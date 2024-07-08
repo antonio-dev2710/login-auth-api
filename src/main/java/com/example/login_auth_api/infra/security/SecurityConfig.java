@@ -24,7 +24,7 @@ public class SecurityConfig {
     //vai colocar como filtro as requisições que seram filtradas
     @Autowired
     SecurityFilter securityFilter;
-
+    @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity httpSecurity) throws Exception{
        httpSecurity.csrf(csrf -> csrf.disable())
                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
